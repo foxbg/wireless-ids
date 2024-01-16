@@ -2405,11 +2405,11 @@ def SelectMonitorToUse():
     return SELECTED_MON;
 
 def CheckRequiredFiles():
-    FCheck=Run("locate -n 3 aircrack-ng | sed -n '1p'","0")
+    FCheck=Run("which aircrack-ng", "0")
     if FCheck=="":
         printc ("!!!","Aircrack-NG suite must be installed inorder to use the Wireless IDS !","")
 	exit (0)
-    FCheck=Run("locate -n 3 tshark | sed -n '1p'","0")
+    FCheck=Run("which tshark ","0")
     if FCheck=="":
         printc ("!!!","Aircrack-NG suite must be installed inorder to use the Wireless IDS !","")
         exit (0)
