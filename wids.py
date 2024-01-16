@@ -1225,7 +1225,7 @@ def GetInterfaceList(cmdMode):
                 ps=subprocess.Popen("iwconfig " + str(IFACE) + "| grep -i 'Mode:' | tr -s ' ' | egrep -o 'Mode:..................' | cut -d ' ' -f1 | cut -d ':' -f2" , shell=True, stdout=subprocess.PIPE, stderr=open(os.devnull, 'w'))	
                 MODEN=ps.stdout.read().replace("\n","")
                 MODE=MODEN.upper()
-                ps=subprocess.Popen("iwconfig " + str(IFACE) + "| grep -o 'IEEE..........................' | cut -d ' ' -f2" , shell=True, stdout=subprocess.PIPE)	
+                ps=subprocess.Popen("iwconfig " + str(IFACE) + "| grep -o 'IEEE.......................' | cut -d ' ' -f2" , shell=True, stdout=subprocess.PIPE)	
                 IEEE=ps.stdout.read().replace("\n","").upper().replace("802.11","802.11 ")
                 LANMODE="WLAN"
             else:
